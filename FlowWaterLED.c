@@ -6,30 +6,36 @@
 #include <intrins.h>
 #define uchar unsigned char
 #define uint unsigned int
-sbit LED_1 = P2^0;
-uint a;
-uchar i;
-unsigned temp;
+#define LED P2
 
-void delay(uint z); // 函数原型
+void delay(uint z)
+{
+	while(z--);
+}
 
 void main()
 {
+	uchar i;
+	LED = 0x7f; // BIN 0111 1111 P27最高位置零
+	// LED = 0xfe; // BIN 1111 1110
+	delay(5000);
 
-	temp = 0x7f; // BIN 0111 1111 P27最高位置零
-	// temp = 0xfe; // BIN 1111 1110
-	P2 = temp;
 	while(1)
 	{
-		for(i = 0; i < 8; i++)
+		for(i = 0; i < 7; i++)
 		{	
-			temp = _cror_(temp, 1);
-			//temp = _crol_(temp, 1);
-			P2 = temp;
-			delay(2000);
+			LED = _cror_(LED, 1); // 字符循环右移一位
+			delay(50000);
 		}
+		
+		for(i = 0; i < 7; i++)
+		{	
+			LED = _crol_(LED, 1); // 字符循环左移一位
+			delay(50000);
+		}
+		
 	}
-	
+}	
 // 
 /**
 	temp = 0x7f; // BIN 0111 1111 P27最高位置零
@@ -80,11 +86,3 @@ void main()
 	}
 */
 	
-}
-
-void delay(uint z)
-{
-	uint x, y;
-	for(x = z; x > 0; x--)
-		for(y = 120; y > 0; y--);
-}	

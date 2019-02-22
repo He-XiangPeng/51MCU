@@ -4,10 +4,14 @@
 */
 #include <reg52.h>
 #define uchar unsigned char
-#define uint unsigned int
+typedef unsigned int uint;
 sbit LED_1 = P2^0;
-uint a;
-uint b;
+
+void delay(uint i)
+{
+	while(i--); // 当i为0时循环停止
+}
+
 void main()
 {
 
@@ -15,13 +19,9 @@ void main()
 	while(1)
 	{
 		LED_1 = 0; // 点亮LED
-		// a = 3000;
-		a = 50000;
-		while(a--);
+		delay(50000);
 		LED_1 = 1;	// 熄灭LED
-		// a = 3000;
-		b = 50000;
-		while(b--);
+		delay(50000);
 	}
 
 }
