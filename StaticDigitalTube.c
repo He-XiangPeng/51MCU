@@ -34,7 +34,7 @@ uchar code ledData[] = {
 	0x39, // 'c'
 	0x5e, // 'd'
 	0x79, // 'e'
-	0x71 // 'f'
+	0x71  // 'f'
 }; // code是程序储存空间
 
 
