@@ -1,6 +1,6 @@
 /**
-* 
-*	静态数码管显示
+*  循环显示静态字符
+*
 */
  //unsigned char Number[16]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};// 共阴极  码值
  //			    {0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90,0x88,0x83,0xc6,0xa1,0x86,0x8e};// 共阳极  码值
@@ -17,8 +17,9 @@
 typedef unsigned int uint;
 sbit we = P2^7;
 sbit du = P2^6;
+uchar i = 0;
 
-uchar code ledData[] = {
+uchar code ledData[i] = {
 	0x3f, // '0'
 	0x06, // '1'
 	0x5b, // '2'
@@ -45,14 +46,24 @@ void delay(uint i)
 
 void main()
 {
-	du = 1; // 打开段选
-	P0 = ledData[9];
-	du = 0; // 关闭段选
-	// delay(5);
+    while(1)
+    {
+        du = 1; // 打开段选
+        P0 = ledData[i];
+        du = 0; // 关闭段选
+        // delay(5);
 
-	we = 1; // 打开位选
-	P0 = 0;
-	we = 0; // 关闭位选
+        we = 1; // 打开位选
+        P0 = 0;
+        we = 0; // 关闭位选
+        delay(500);
+        i++;
+        if (i == 10) 
+        {
+            i = 0;
+        }
+    }
+	
 
-	while(1);
+	
 }
