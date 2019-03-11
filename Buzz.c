@@ -19,8 +19,8 @@ void main()
 	uint k = 100;
 	while(1)
 	{
-			beep = ~beep;
-			delay(k);
+		beep = ~beep;
+		delay(k); // 改变k的取值以改变频率，发出不同音高的声音
 	}
-	// 改变k的取值以改变频率，发出不同音高的声音
+	
 }
