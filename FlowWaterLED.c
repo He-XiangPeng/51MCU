@@ -4,8 +4,9 @@
 */
 #include <reg52.h>
 #include <intrins.h>
-#define uchar unsigned char
-#define uint unsigned int
+// 宏名用大写
+#define UCHAR unsigned char 
+#define UINT unsigned int
 #define LED P2
 
 void delay(uint z)

@@ -3,7 +3,7 @@
 *
 */
 #include <reg52.h>
-#define uchar unsigned char
+typedef unsigned char uchar;
 typedef unsigned int uint;
 sbit LED_1 = P2^0;
 

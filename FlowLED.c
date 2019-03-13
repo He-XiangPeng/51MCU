@@ -4,16 +4,16 @@
 */
 #include <reg52.h>
 #include <intrins.h>
-#define uchar unsigned char
-#define uint unsigned int
+#define UCHAR unsigned char
+#define UINT unsigned int
 #define LED P2
 
-void delay(uint z)
+void delay(UINT z)
 {
 	while(z--);
 }
 
-void main()
+void main(void)
 {
 	while (1)
 	{

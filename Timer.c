@@ -7,7 +7,7 @@
  */
 
 #include <reg52.h>
-#define uchar unsigned char
+typedef unsigned char uchar;
 typedef unsigned int uint;
 
 uchar counter, time_counter;
