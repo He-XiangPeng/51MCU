@@ -7,7 +7,7 @@ typedef unsigned char uchar;
 typedef unsigned int uint;
 sbit LED = P2^2;
 
-// 定时中断0
+// 定时中断0初始化
 void Timer0Init()
 {
 	TMOD |= 0x01;

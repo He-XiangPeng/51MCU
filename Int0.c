@@ -8,7 +8,7 @@ typedef unsigned char uchar;
 typedef unsigned int uint;
 sbit LED = P2^0;
 sbit K3 = P3^2; // K3按键
-sbit K4 = P3^3; // K4 Button
+sbit K4 = P3^3; // K4按键
 
 void delay(uint i)
 {
@@ -20,7 +20,7 @@ void Int0Init()
 {
 	IT0 = 1; // 请求中断0
 	EX0 = 1; // 允许中断0
-	EA  = 1; //cpu总中断
+	EA  = 1; // cpu总中断
 }
 
 // 外部中断1
@@ -28,7 +28,7 @@ void Int1Init()
 {
 	IT1 = 1; // 请求中断1
 	EX1 = 1; // 允许中断1
-	EA  = 1; //cpu总中断
+	EA  = 1; // cpu总中断
 }
 
 void main()

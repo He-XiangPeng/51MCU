@@ -1,5 +1,5 @@
 /**
-* LED灯闪烁
+* 	LED灯闪烁
 *
 */
 #include <reg52.h>
@@ -23,5 +23,4 @@ void main()
 		LED_1 = 1;	// 熄灭LED
 		delay(50000);
 	}
-
 }

@@ -1,6 +1,7 @@
 /**
-* 
 *	动态数码管显示
+*
+* 
 */
 #include <reg52.h>
 typedef unsigned char uchar;

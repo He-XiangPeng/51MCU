@@ -1,6 +1,7 @@
 /**
 * 
 *	动态数码管显示
+*    
 */
 #include <reg51.h>
 #include <intrins.h>
@@ -16,7 +17,7 @@ uchar ledwei[] = {0x7f, 0xbf, 0xdf, 0xef, 0xf7, 0xfb, 0xfd, 0xfe};
 void delay(uchar i);
 void HC595SendByte(uchar dat);
 
-void main(void)
+void main()
 {
     // HC595SendByte(0x80);
     // P0 = 0x7f;
@@ -30,8 +31,7 @@ void main(void)
             HC595SendByte(ledduan[i]);
             delay(100);
             HC595SendByte(0x00);
-        }
-        
+        }      
     }
 }
 

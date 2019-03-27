@@ -7,7 +7,7 @@ typedef unsigned char uchar;
 typedef unsigned int uint;
 
 sbit LED_1 = P2^0;
-sbit K1 = P3^1;
+sbit K1 = P3^1; // 按键K1
 
 void delay(uint i)
 {
@@ -25,13 +25,11 @@ void keypros(void)
 	}
 }
 
-void main(void)
+void main()
 {
-
-// 单个LED闪烁
+	// 单个LED闪烁
 	while(1)
 	{
 		keypros();
 	}
-
 }

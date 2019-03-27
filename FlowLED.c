@@ -13,7 +13,7 @@ void delay(UINT z)
 	while(z--);
 }
 
-void main(void)
+void main()
 {
 	while (1)
 	{

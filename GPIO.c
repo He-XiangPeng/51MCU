@@ -1,6 +1,6 @@
 /**
 * 
-*	 矩阵按键，控制数码管
+* 矩阵按键，控制数码管
 * 
 */
 #include <reg52.h>
@@ -35,7 +35,7 @@ uchar KeyValue;
 void keydown(void);
 void delay(uchar i);
 
-void main(void)
+void main()
 {
 	LSA = 0;
 	LSB = 0;
