@@ -14,12 +14,11 @@ typedef unsigned char uchar;
 void UsartInit()
 {
 	TMOD = 0x20; // 高四位0010， 低四位0000
-	TH1  = 0xf3;
-	TL1  = 0xf3;
+	TH1  = TL1 = 0xf3; // 设置波特率4800bps
 	PCON = 0x80; // 波特率加倍
 	SCON = 0x50; // 0101 0000
 	ES   = 1; // 打开串口中断
-	EA   = 1;
+	EA   = 1; // 打开总允许中断
 }
 
 void main()
@@ -32,7 +31,7 @@ void Usart() interrupt 4
 {
 	uchar receiveData; // 
 	receiveData = SBUF;
-	RI = 0;
+	RI = 0; // 接收数据
 	SBUF = receiveData;
 	while(!TI);
 	TI = 0; // 中断标志位置零
